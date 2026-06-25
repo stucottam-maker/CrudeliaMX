@@ -405,4 +405,13 @@ function GalleryPage() {
         <h1>From the kitchen pass.</h1>
         <p>
           Tuna tostadas, guacamole, salsa trio, birria, doggos and whatever
-          else makes it out before getting
+          else makes it out before getting eaten.
+        </p>
+      </section>
+
+      <section className="gallerySection pageSection">
+        <GalleryGrid />
+      </section>
+    </Layout>
+  );
+}
