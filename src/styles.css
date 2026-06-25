@@ -98,6 +98,7 @@ a {
 }
 
 .hero h2,
+.pageHero h1,
 .intro h2,
 .menuSection h2,
 .popupSection h2,
@@ -147,7 +148,8 @@ a {
   line-height: 1.65;
 }
 
-.heroButtons {
+.heroButtons,
+.sectionCta {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
@@ -226,10 +228,32 @@ a {
   text-transform: uppercase;
 }
 
+.pageHero {
+  padding: 88px 6vw;
+  background:
+    radial-gradient(circle at bottom right, rgba(245, 166, 189, 0.8), transparent 34%),
+    linear-gradient(135deg, var(--cream), var(--soft-pink));
+  border-bottom: 3px solid var(--red);
+}
+
+.pageHero h1 {
+  max-width: 980px;
+  color: var(--red);
+  font-size: clamp(3.2rem, 8vw, 7.4rem);
+  line-height: 0.9;
+}
+
+.pageHero p {
+  max-width: 720px;
+  margin: 24px 0 0;
+  font-size: 1.18rem;
+  line-height: 1.65;
+}
+
 .intro {
   padding: 88px 6vw;
   display: grid;
-  grid-template-columns: 140px 1fr;
+  grid-template-columns: 180px 1fr;
   gap: 42px;
   align-items: start;
   background: var(--pink);
@@ -253,8 +277,8 @@ a {
 }
 
 .ladyMark {
-  width: 124px;
-  height: 124px;
+  width: 150px;
+  height: 150px;
   display: grid;
   place-items: center;
 }
@@ -268,6 +292,10 @@ a {
 .menuSection {
   padding: 100px 6vw;
   background: var(--cream);
+}
+
+.pageSection {
+  padding-top: 80px;
 }
 
 .menuGrid {
@@ -328,6 +356,10 @@ a {
   align-items: center;
   background: var(--red);
   color: var(--cream);
+}
+
+.popupSection.standalone {
+  min-height: 460px;
 }
 
 .popupSection .eyebrow,
@@ -425,12 +457,60 @@ a {
   gap: 14px;
 }
 
-.galleryGrid img {
+.galleryItem {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--pink);
+  background: var(--soft-pink);
+}
+
+.galleryItem img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border: 2px solid var(--pink);
-  background: var(--soft-pink);
+}
+
+.galleryItem figcaption {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 8px 10px;
+  background: var(--red);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.contactSection {
+  padding: 90px 6vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  background: var(--cream);
+}
+
+.contactCard {
+  padding: 34px;
+  background: var(--pink);
+  border: 2px solid var(--red);
+}
+
+.contactCard p {
+  margin: 0 0 10px;
+  color: var(--dark-red);
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.contactCard a {
+  color: var(--red);
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-decoration: none;
 }
 
 .footer {
@@ -522,7 +602,8 @@ a {
     line-height: 1;
   }
 
-  .heroCopy > p:last-of-type {
+  .heroCopy > p:last-of-type,
+  .pageHero p {
     font-size: 1rem;
     line-height: 1.55;
   }
@@ -547,11 +628,13 @@ a {
     font-size: 1.15rem;
   }
 
+  .pageHero,
   .intro,
   .menuSection,
   .popupSection,
   .cateringSection,
-  .gallerySection {
+  .gallerySection,
+  .contactSection {
     padding-top: 64px;
     padding-bottom: 64px;
   }
@@ -561,6 +644,7 @@ a {
   }
 
   .intro h2,
+  .pageHero h1,
   .menuSection h2,
   .popupSection h2,
   .cateringSection h2,
@@ -570,7 +654,12 @@ a {
 
   .menuGrid,
   .galleryGrid,
-  .featureGrid {
+  .featureGrid,
+  .contactSection {
     grid-template-columns: 1fr;
+  }
+
+  .contactCard a {
+    font-size: 1.15rem;
   }
 }
