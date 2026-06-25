@@ -105,6 +105,14 @@ const gallery = [
     src: '/crudelia-4.jpg',
     alt: 'Birria taco with consommé',
   },
+  {
+    src: '/crudelia-5.jpg',
+    alt: 'Salsa trio with totopos',
+  },
+  {
+    src: '/crudelia-6.jpg',
+    alt: 'Vegan doggo',
+  },
 ];
 
 function App() {
@@ -131,9 +139,9 @@ function App() {
           <h1>Crudelia</h1>
           <h2>Tacos, tostadas & plates for la cruda.</h2>
           <p>
-            Bold Mexican street food from a little kitchen with a lot of
-            attitude — serving tuna tostadas, birria, guacamole, salsas and
-            late-night cravings across London.
+            Bold Mexican street food from a little kitchen with a lot of attitude —
+            serving tuna tostadas, birria, guacamole, salsas and late-night
+            cravings across London.
           </p>
 
           <div className="heroButtons">
@@ -156,7 +164,6 @@ function App() {
       <section className="intro">
         <div className="ladyMark">
           <img src="/crudelia-lady.png" alt="Crudelia lady logo" />
-          <span>✦</span>
         </div>
 
         <div>
@@ -196,7 +203,7 @@ function App() {
       <section id="popup" className="popupSection">
         <div>
           <p className="eyebrow">Find us next</p>
-          <h2>Currently cooking in Clapham</h2>
+          <h2>Currently cooking in London</h2>
           <p>
             Kitchen takeovers, pub pop-ups, match-day food, private events and
             late-night taco situations.
