@@ -385,7 +385,7 @@ function CateringPage() {
           table, a late-night cruda menu or a custom package around your event.
         </p>
 
-        <a className="cta" href="mailto:hello@crudelia.mx">
+        <a className="cta" href="mailto:hola@crudelia.co.uk">
           Enquire now
         </a>
       </section>
@@ -427,7 +427,7 @@ function ContactPage() {
       <section className="contactSection">
         <div className="contactCard">
           <p>Bookings & catering</p>
-          <a href="mailto:hello@crudelia.mx">hello@crudelia.mx</a>
+          <a href="mailto:hola@crudelia.co.uk">hhola@crudelia.co.uk</a>
         </div>
 
         <div className="contactCard">
