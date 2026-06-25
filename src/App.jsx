@@ -427,7 +427,7 @@ function ContactPage() {
       <section className="contactSection">
         <div className="contactCard">
           <p>Bookings & catering</p>
-          <a href="mailto:hola@crudelia.co.uk">hhola@crudelia.co.uk</a>
+          <a href="mailto:hola@crudelia.co.uk">hola@crudelia.co.uk</a>
         </div>
 
         <div className="contactCard">
