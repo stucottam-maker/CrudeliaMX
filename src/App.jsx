@@ -415,14 +415,62 @@ function GalleryPage() {
     </Layout>
   );
 }
+
+function ContactPage() {
+  return (
+    <Layout>
+      <section className="pageHero">
+        <p className="eyebrow">Contact</p>
+        <h1>Bookings, catering & collaborations.</h1>
+        <p>
+          For private catering, pop-ups, supper clubs, kitchen takeovers or
+          general Crudelia questions, get in touch.
+        </p>
+      </section>
+
+      <section className="contactSection">
+        <div className="contactCard">
+          <p>Bookings & catering</p>
+          <a href="mailto:hello@crudelia.mx">hello@crudelia.mx</a>
+        </div>
+
+        <div className="contactCard">
+          <p>Instagram</p>
+          <a
+            href="https://www.instagram.com/crudelia.mx/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            @crudelia.mx
+          </a>
+        </div>
+      </section>
+    </Layout>
+  );
+}
+
 function App() {
   const path = window.location.pathname;
 
-  if (path === '/menu') return <MenuPage />;
-  if (path === '/pop-ups') return <PopUpsPage />;
-  if (path === '/catering') return <CateringPage />;
-  if (path === '/gallery') return <GalleryPage />;
-  if (path === '/contact') return <ContactPage />;
+  if (path === '/menu') {
+    return <MenuPage />;
+  }
+
+  if (path === '/pop-ups') {
+    return <PopUpsPage />;
+  }
+
+  if (path === '/catering') {
+    return <CateringPage />;
+  }
+
+  if (path === '/gallery') {
+    return <GalleryPage />;
+  }
+
+  if (path === '/contact') {
+    return <ContactPage />;
+  }
 
   return <HomePage />;
 }
