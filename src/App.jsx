@@ -146,7 +146,7 @@ function Footer() {
 
       <div>
         <p>Bookings & catering</p>
-        <a href="mailto:hello@crudelia.mx">hola@crudelia.co.uk</a>
+        <a href="mailto:hola@crudelia.co.uk">hola@crudelia.co.uk</a>
         <br />
         <a
           href="https://www.instagram.com/crudelia.mx/"
