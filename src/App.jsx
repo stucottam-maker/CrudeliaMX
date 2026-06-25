@@ -178,8 +178,8 @@ function Hero() {
         <h1>Crudelia</h1>
         <h2>Tacos, tostadas & plates for la cruda.</h2>
         <p>
-          Bold Mexican street food from a little kitchen with a lot of attitude —
-          serving tuna tostadas, tacos, guacamole, epic salsas and late-night
+          Bold Mexican street food from a little kitchen with attitude —
+          serving tacos, tostadas, flautas, mexican doggos, epic salsas and late-night
           cravings across London.
         </p>
 
