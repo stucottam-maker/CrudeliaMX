@@ -179,7 +179,7 @@ function Hero() {
         <h2>Tacos, tostadas & plates for la cruda.</h2>
         <p>
           Bold Mexican street food from a little kitchen with a lot of attitude —
-          serving tuna tostadas, birria, guacamole, salsas and late-night
+          serving tuna tostadas, tacos, guacamole, epic salsas and late-night
           cravings across London.
         </p>
 
@@ -213,9 +213,9 @@ function AboutBlock() {
         <p className="eyebrow">About Crudelia</p>
         <h2>A little Mexican kitchen with a lot of attitude.</h2>
         <p>
-          Crudelia is built around bold salsas, slow braises, corn tortillas,
-          late nights and good people. From pub kitchen takeovers to private
-          parties, the food is colourful, punchy and made for sharing.
+          Crudelia was born out of the love for the street food vibe, inspired by the game changing Mexico 86 world cup 
+          and the epic food that kept it going, now in the uk bringing the best of the best for late nights and good people. 
+          From pub kitchen takeovers to private parties, the food is colourful, punchy and passionately made for sharing. 
         </p>
       </div>
     </section>
