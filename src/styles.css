@@ -125,8 +125,8 @@ a {
 .hero h1 {
   margin: 0;
   color: var(--red);
-  font-family: Lobster, Pacifico, cursive;
-  font-size: clamp(5.8rem, 12vw, 10.8rem);
+  font-family: Pacifico, Lobster, cursive;
+  font-size: clamp(5.4rem, 11vw, 9.8rem);
   line-height: 0.9;
   letter-spacing: 0;
   text-transform: none;
