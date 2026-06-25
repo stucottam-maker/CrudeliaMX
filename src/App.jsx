@@ -99,11 +99,7 @@ const gallery = [
     alt: 'Guacamole and totopos',
     label: 'Guacamole & totopos',
   },
-  {
-    src: '/crudelia-3.jpg',
-    alt: 'Totopo dipping into guacamole',
-    label: 'Guac action shot',
-  },
+ 
   {
     src: '/crudelia-4.jpg',
     alt: 'Birria taco with consommé',
