@@ -316,9 +316,9 @@ function MenuPage() {
         <p className="eyebrow">Menu</p>
         <h1>Tacos, antojitos & plates for la cruda.</h1>
         <p>
-          A punchy little menu built around corn, salsa, slow braises, fresh
-          toppings and proper cravings.
-        </p>
+  Corn, smoke, salsa and slow-cooked trouble — a short, sharp menu made
+  for messy hands, cold drinks and la cruda.
+</p>
       </section>
 
       <section className="menuSection pageSection">
