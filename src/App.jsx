@@ -281,7 +281,7 @@ function HomePage() {
       <section className="popupSection">
         <div>
           <p className="eyebrow">Find us next</p>
-          <h2>Currently cooking in London</h2>
+          <h2>Currently cooking in Clapham Common</h2>
           <p>
             Kitchen takeovers, pub pop-ups, match-day food, private events and
             late-night taco situations.
