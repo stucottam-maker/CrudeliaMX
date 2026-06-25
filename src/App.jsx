@@ -92,118 +92,200 @@ const gallery = [
   {
     src: '/crudelia-1.jpg',
     alt: 'Tuna tostada',
+    label: 'Tuna tostada',
   },
   {
     src: '/crudelia-2.jpg',
     alt: 'Guacamole and totopos',
+    label: 'Guacamole & totopos',
   },
   {
     src: '/crudelia-3.jpg',
     alt: 'Totopo dipping into guacamole',
+    label: 'Guac action shot',
   },
   {
     src: '/crudelia-4.jpg',
     alt: 'Birria taco with consommé',
+    label: 'Birria taco',
   },
   {
     src: '/crudelia-5.jpg',
     alt: 'Salsa trio with totopos',
+    label: 'Salsa trio',
   },
   {
     src: '/crudelia-6.jpg',
     alt: 'Vegan doggo',
+    label: 'Vegan doggo',
   },
 ];
 
-function App() {
+function Header() {
+  return (
+    <header className="nav">
+      <a className="brand" href="/">
+        Crudelia
+        <span>Mexican Street Food</span>
+      </a>
+
+      <nav className="navLinks" aria-label="Main navigation">
+        <a href="/menu">Menu</a>
+        <a href="/pop-ups">Pop-ups</a>
+        <a href="/catering">Catering</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </header>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="footer">
+      <div>
+        <h2>Crudelia</h2>
+        <p>Mexican street food · Pop-ups · Supper clubs · Private catering</p>
+      </div>
+
+      <div>
+        <p>Bookings & catering</p>
+        <a href="mailto:hello@crudelia.mx">hello@crudelia.mx</a>
+        <br />
+        <a
+          href="https://www.instagram.com/crudelia.mx/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          @crudelia.mx
+        </a>
+      </div>
+    </footer>
+  );
+}
+
+function Layout({ children }) {
   return (
     <main className="site">
-      <header className="nav">
-        <a className="brand" href="#home">
-          Crudelia
-          <span>Mexican Street Food</span>
-        </a>
+      <Header />
+      {children}
+      <Footer />
+    </main>
+  );
+}
 
-        <nav className="navLinks" aria-label="Main navigation">
-          <a href="#menu">Menu</a>
-          <a href="#popup">Pop-ups</a>
-          <a href="#catering">Catering</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </header>
+function Hero() {
+  return (
+    <section className="hero">
+      <div className="heroCopy">
+        <p className="eyebrow">Mexican kitchen · London pop-ups · Private events</p>
+        <h1>Crudelia</h1>
+        <h2>Tacos, tostadas & plates for la cruda.</h2>
+        <p>
+          Bold Mexican street food from a little kitchen with a lot of attitude —
+          serving tuna tostadas, birria, guacamole, salsas and late-night
+          cravings across London.
+        </p>
 
-      <section id="home" className="hero">
-        <div className="heroCopy">
-          <p className="eyebrow">Mexican kitchen · London pop-ups · Private events</p>
-          <h1>Crudelia</h1>
-          <h2>Tacos, tostadas & plates for la cruda.</h2>
-          <p>
-            Bold Mexican street food from a little kitchen with a lot of attitude —
-            serving tuna tostadas, birria, guacamole, salsas and late-night
-            cravings across London.
-          </p>
-
-          <div className="heroButtons">
-            <a href="#menu">View menu</a>
-            <a className="ghost" href="#catering">
-              Book catering
-            </a>
-          </div>
+        <div className="heroButtons">
+          <a href="/menu">View menu</a>
+          <a className="ghost" href="/catering">
+            Book catering
+          </a>
         </div>
+      </div>
 
-        <div className="heroImage">
-          <img src="/crudelia-hero.jpg" alt="Crudelia tuna tostada" />
-          <div className="openBadge">
-            <strong>Open till late</strong>
-            <span>Service subject to match days</span>
-          </div>
+      <div className="heroImage">
+        <img src="/crudelia-hero.jpg" alt="Crudelia tuna tostada" />
+        <div className="openBadge">
+          <strong>Open till late</strong>
+          <span>Service subject to match days</span>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      <section className="intro">
-        <div className="ladyMark">
-          <img src="/crudelia-lady.png" alt="Crudelia lady logo" />
-        </div>
+function AboutBlock() {
+  return (
+    <section className="intro">
+      <div className="ladyMark">
+        <img src="/crudelia-lady.png" alt="Crudelia lady logo" />
+      </div>
 
-        <div>
-          <p className="eyebrow">About Crudelia</p>
-          <h2>A little Mexican kitchen with a lot of attitude.</h2>
-          <p>
-            Crudelia is built around bold salsas, slow braises, corn tortillas,
-            late nights and good people. From pub kitchen takeovers to private
-            parties, the food is colourful, punchy and made for sharing.
-          </p>
-        </div>
-      </section>
+      <div>
+        <p className="eyebrow">About Crudelia</p>
+        <h2>A little Mexican kitchen with a lot of attitude.</h2>
+        <p>
+          Crudelia is built around bold salsas, slow braises, corn tortillas,
+          late nights and good people. From pub kitchen takeovers to private
+          parties, the food is colourful, punchy and made for sharing.
+        </p>
+      </div>
+    </section>
+  );
+}
 
-      <section id="menu" className="menuSection">
-        <p className="eyebrow">Menu</p>
-        <h2>Tacos, antojitos & cruda food</h2>
+function MenuGrid({ preview = false }) {
+  const groups = preview ? menuGroups.slice(0, 2) : menuGroups;
 
-        <div className="menuGrid">
-          {menuGroups.map((group) => (
-            <article className="menuCard" key={group.title}>
-              <h3>{group.title}</h3>
+  return (
+    <div className="menuGrid">
+      {groups.map((group) => (
+        <article className="menuCard" key={group.title}>
+          <h3>{group.title}</h3>
 
-              {group.items.map((item) => (
-                <div className="menuItem" key={item.name}>
-                  <div>
-                    <h4>{item.name}</h4>
-                    <p>{item.desc}</p>
-                  </div>
-                  <span>{item.price}</span>
-                </div>
-              ))}
-            </article>
+          {group.items.map((item) => (
+            <div className="menuItem" key={item.name}>
+              <div>
+                <h4>{item.name}</h4>
+                <p>{item.desc}</p>
+              </div>
+              <span>{item.price}</span>
+            </div>
           ))}
+        </article>
+      ))}
+    </div>
+  );
+}
+
+function GalleryGrid({ preview = false }) {
+  const images = preview ? gallery.slice(0, 3) : gallery;
+
+  return (
+    <div className="galleryGrid">
+      {images.map((image) => (
+        <figure className="galleryItem" key={image.src}>
+          <img src={image.src} alt={image.alt} />
+          <figcaption>{image.label}</figcaption>
+        </figure>
+      ))}
+    </div>
+  );
+}
+
+function HomePage() {
+  return (
+    <Layout>
+      <Hero />
+      <AboutBlock />
+
+      <section className="menuSection">
+        <p className="eyebrow">Menu preview</p>
+        <h2>Tacos, antojitos & cruda food</h2>
+        <MenuGrid preview />
+        <div className="sectionCta">
+          <a className="cta" href="/menu">
+            See full menu
+          </a>
         </div>
       </section>
 
-      <section id="popup" className="popupSection">
+      <section className="popupSection">
         <div>
           <p className="eyebrow">Find us next</p>
-          <h2>Currently cooking in Clapham Common</h2>
+          <h2>Currently cooking in London</h2>
           <p>
             Kitchen takeovers, pub pop-ups, match-day food, private events and
             late-night taco situations.
@@ -217,14 +299,84 @@ function App() {
         </aside>
       </section>
 
-      <section id="catering" className="cateringSection">
-        <p className="eyebrow">Private events</p>
-        <h2>Bring Crudelia to your party.</h2>
-        <p>
-          Available for birthdays, supper clubs, brand events, weddings, kitchen
-          takeovers and anything that needs tacos, salsa and attitude.
-        </p>
+      <section className="gallerySection">
+        <p className="eyebrow">Gallery preview</p>
+        <h2>From the kitchen pass</h2>
+        <GalleryGrid preview />
+        <div className="sectionCta">
+          <a className="cta" href="/gallery">
+            See gallery
+          </a>
+        </div>
+      </section>
+    </Layout>
+  );
+}
 
+function MenuPage() {
+  return (
+    <Layout>
+      <section className="pageHero">
+        <p className="eyebrow">Menu</p>
+        <h1>Tacos, antojitos & plates for la cruda.</h1>
+        <p>
+          A punchy little menu built around corn, salsa, slow braises, fresh
+          toppings and proper cravings.
+        </p>
+      </section>
+
+      <section className="menuSection pageSection">
+        <MenuGrid />
+      </section>
+    </Layout>
+  );
+}
+
+function PopUpsPage() {
+  return (
+    <Layout>
+      <section className="pageHero">
+        <p className="eyebrow">Pop-ups</p>
+        <h1>Find Crudelia in London.</h1>
+        <p>
+          Pub kitchen takeovers, match-day food, late-night service and special
+          events across the city.
+        </p>
+      </section>
+
+      <section className="popupSection standalone">
+        <div>
+          <p className="eyebrow">Current residency</p>
+          <h2>King & Co, Clapham</h2>
+          <p>
+            We’re serving tacos, tostadas, doggos, salsa and proper plates for
+            la cruda from the kitchen at King & Co.
+          </p>
+        </div>
+
+        <aside className="dateCard">
+          <span>22 June – 19 July</span>
+          <strong>Open till late</strong>
+          <small>Service subject to match days</small>
+        </aside>
+      </section>
+    </Layout>
+  );
+}
+
+function CateringPage() {
+  return (
+    <Layout>
+      <section className="pageHero">
+        <p className="eyebrow">Catering</p>
+        <h1>Bring Crudelia to your party.</h1>
+        <p>
+          Private events, birthdays, supper clubs, brand events, weddings,
+          kitchen takeovers and anything that needs tacos, salsa and attitude.
+        </p>
+      </section>
+
+      <section className="cateringSection pageSection">
         <div className="featureGrid">
           <div>Private catering</div>
           <div>Supper clubs</div>
@@ -232,43 +384,25 @@ function App() {
           <div>Kitchen takeovers</div>
         </div>
 
+        <p>
+          We can build a compact taco menu, a full street-food spread, a salsa
+          table, a late-night cruda menu or a custom package around your event.
+        </p>
+
         <a className="cta" href="mailto:hello@crudelia.mx">
           Enquire now
         </a>
       </section>
-
-      <section id="gallery" className="gallerySection">
-        <p className="eyebrow">Gallery</p>
-        <h2>From the kitchen pass</h2>
-
-        <div className="galleryGrid">
-          {gallery.map((image) => (
-            <img src={image.src} alt={image.alt} key={image.src} />
-          ))}
-        </div>
-      </section>
-
-      <footer id="contact" className="footer">
-        <div>
-          <h2>Crudelia</h2>
-          <p>Mexican street food · Pop-ups · Supper clubs · Private catering</p>
-        </div>
-
-        <div>
-          <p>Bookings & catering</p>
-          <a href="mailto:hello@crudelia.mx">hello@crudelia.mx</a>
-          <br />
-          <a
-            href="https://www.instagram.com/crudelia.mx/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            @crudelia.mx
-          </a>
-        </div>
-      </footer>
-    </main>
+    </Layout>
   );
 }
 
-export default App;
+function GalleryPage() {
+  return (
+    <Layout>
+      <section className="pageHero">
+        <p className="eyebrow">Gallery</p>
+        <h1>From the kitchen pass.</h1>
+        <p>
+          Tuna tostadas, guacamole, salsa trio, birria, doggos and whatever
+          else makes it out before getting
