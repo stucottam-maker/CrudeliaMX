@@ -196,7 +196,7 @@ function App() {
       <section id="popup" className="popupSection">
         <div>
           <p className="eyebrow">Find us next</p>
-          <h2>Currently cooking in London</h2>
+          <h2>Currently cooking in Clapham</h2>
           <p>
             Kitchen takeovers, pub pop-ups, match-day food, private events and
             late-night taco situations.
