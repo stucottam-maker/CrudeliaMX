@@ -415,3 +415,16 @@ function GalleryPage() {
     </Layout>
   );
 }
+function App() {
+  const path = window.location.pathname;
+
+  if (path === '/menu') return <MenuPage />;
+  if (path === '/pop-ups') return <PopUpsPage />;
+  if (path === '/catering') return <CateringPage />;
+  if (path === '/gallery') return <GalleryPage />;
+  if (path === '/contact') return <ContactPage />;
+
+  return <HomePage />;
+}
+
+export default App;
