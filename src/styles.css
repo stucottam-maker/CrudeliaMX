@@ -125,7 +125,8 @@ a {
 .menuSection h2,
 .popupSection h2,
 .cateringSection h2,
-.gallerySection h2 {
+.gallerySection h2,
+.contactIntro h2 {
   margin: 0;
   font-family: Anton, sans-serif;
   text-transform: uppercase;
@@ -181,7 +182,8 @@ a {
 }
 
 .heroButtons a,
-.cta {
+.cta,
+.contactForm button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -195,6 +197,7 @@ a {
   font-weight: 900;
   letter-spacing: 0.08em;
   box-shadow: 6px 6px 0 var(--orange);
+  cursor: pointer;
 }
 
 .heroButtons .ghost {
@@ -327,7 +330,8 @@ a {
 .intro h2,
 .menuSection h2,
 .cateringSection h2,
-.gallerySection h2 {
+.gallerySection h2,
+.contactIntro h2 {
   color: var(--red);
   font-size: clamp(2.6rem, 7vw, 6.5rem);
   line-height: 0.92;
@@ -595,6 +599,23 @@ a {
   background: var(--cream);
 }
 
+.contactWithForm {
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: start;
+}
+
+.contactIntro > p {
+  max-width: 560px;
+  font-size: 1.08rem;
+  line-height: 1.65;
+}
+
+.contactCardsStack {
+  margin-top: 28px;
+  display: grid;
+  gap: 14px;
+}
+
 .contactCard {
   padding: 34px;
   background: var(--pink);
@@ -614,6 +635,54 @@ a {
   font-size: 1.5rem;
   font-weight: 900;
   text-decoration: none;
+}
+
+.contactForm {
+  padding: 34px;
+  background: rgba(255, 214, 228, 0.72);
+  border: 3px solid var(--red);
+  box-shadow: 12px 12px 0 rgba(184, 32, 34, 0.16);
+}
+
+.contactForm label {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 18px;
+  color: var(--dark-red);
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.contactForm input,
+.contactForm select,
+.contactForm textarea {
+  width: 100%;
+  border: 2px solid rgba(184, 32, 34, 0.45);
+  background: var(--cream);
+  color: var(--dark);
+  padding: 14px;
+  font: inherit;
+  font-size: 1rem;
+  outline: none;
+}
+
+.contactForm textarea {
+  resize: vertical;
+}
+
+.contactForm input:focus,
+.contactForm select:focus,
+.contactForm textarea:focus {
+  border-color: var(--red);
+}
+
+.formSmallPrint {
+  margin: 18px 0 0;
+  color: var(--dark-red);
+  font-size: 0.82rem;
+  line-height: 1.45;
 }
 
 /* Footer */
@@ -653,7 +722,8 @@ a {
 @media (max-width: 1050px) {
   .hero,
   .imagePageHero,
-  .popupSection {
+  .popupSection,
+  .contactWithForm {
     grid-template-columns: 1fr;
   }
 
@@ -770,18 +840,24 @@ a {
   .menuSection h2,
   .popupSection h2,
   .cateringSection h2,
-  .gallerySection h2 {
+  .gallerySection h2,
+  .contactIntro h2 {
     font-size: clamp(2.4rem, 13vw, 4.2rem);
   }
 
   .menuGrid,
   .galleryGrid,
   .featureGrid,
-  .contactSection {
+  .contactSection,
+  .contactWithForm {
     grid-template-columns: 1fr;
   }
 
   .contactCard a {
     font-size: 1.15rem;
+  }
+
+  .contactForm {
+    padding: 24px;
   }
 }
