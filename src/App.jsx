@@ -132,9 +132,13 @@ const gallery = [
 function Header() {
   return (
     <header className="nav">
-      <a className="brand" href="/">
-        Crudelia
-        <span>Mexican Street Food</span>
+      <a className="brand brandWithLogo" href="/">
+        <img src="/crudelia-lady.png" alt="Crudelia logo" />
+
+        <span className="brandText">
+          Crudelia
+          <small>Mexican Street Food</small>
+        </span>
       </a>
 
       <nav className="navLinks" aria-label="Main navigation">
@@ -187,8 +191,11 @@ function Hero() {
     <section className="hero">
       <div className="heroCopy">
         <p className="eyebrow">Mexican kitchen · London pop-ups · Private events</p>
+
         <h1>Crudelia</h1>
+
         <h2>Tacos, tostadas & plates for la cruda.</h2>
+
         <p>
           Bold Mexican street food from a little kitchen with a lot of attitude —
           serving tuna tostadas, birria, guacamole, salsas and late-night
@@ -205,6 +212,7 @@ function Hero() {
 
       <div className="heroImage">
         <img src="/crudelia-hero.jpg" alt="Crudelia tuna tostada" />
+
         <div className="openBadge">
           <strong>Open till late</strong>
           <span>Service subject to match days</span>
@@ -318,6 +326,7 @@ function HomePage() {
         <p className="eyebrow">Menu preview</p>
         <h2>Tacos, antojitos & cruda food</h2>
         <MenuGrid preview />
+
         <div className="sectionCta">
           <a className="cta" href="/menu">
             See full menu
@@ -346,6 +355,7 @@ function HomePage() {
         <p className="eyebrow">Gallery preview</p>
         <h2>From the kitchen pass</h2>
         <GalleryGrid preview />
+
         <div className="sectionCta">
           <a className="cta" href="/gallery">
             See gallery
