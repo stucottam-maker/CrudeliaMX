@@ -99,11 +99,10 @@ const gallery = [
     alt: 'Guacamole and totopos',
     label: 'Guacamole & totopos',
   },
- 
   {
     src: '/crudelia-4.jpg',
-    alt: 'Birria taco with consommé',
-    label: 'Birria taco',
+    alt: 'Quesabirria taco with consommé',
+    label: 'Quesabirria',
   },
   {
     src: '/crudelia-5.jpg',
@@ -146,7 +145,7 @@ function Footer() {
 
       <div>
         <p>Bookings & catering</p>
-        <a href="mailto:hola@crudelia.co.uk">hola@crudelia.co.uk</a>
+        <a href="mailto:hello@crudelia.mx">hello@crudelia.mx</a>
         <br />
         <a
           href="https://www.instagram.com/crudelia.mx/"
@@ -178,8 +177,8 @@ function Hero() {
         <h1>Crudelia</h1>
         <h2>Tacos, tostadas & plates for la cruda.</h2>
         <p>
-          Bold Mexican street food from a little kitchen with attitude —
-          serving tacos, tostadas, flautas, mexican doggos, epic salsas and late-night
+          Bold Mexican street food from a little kitchen with a lot of attitude —
+          serving tuna tostadas, birria, guacamole, salsas and late-night
           cravings across London.
         </p>
 
@@ -202,6 +201,22 @@ function Hero() {
   );
 }
 
+function PageHero({ eyebrow, title, text, image, imageAlt, logo = false }) {
+  return (
+    <section className="pageHero imagePageHero">
+      <div>
+        <p className="eyebrow">{eyebrow}</p>
+        <h1>{title}</h1>
+        <p>{text}</p>
+      </div>
+
+      <div className={logo ? 'pageHeroImage logoHeroImage' : 'pageHeroImage'}>
+        <img src={image} alt={imageAlt} />
+      </div>
+    </section>
+  );
+}
+
 function AboutBlock() {
   return (
     <section className="intro">
@@ -213,9 +228,9 @@ function AboutBlock() {
         <p className="eyebrow">About Crudelia</p>
         <h2>A little Mexican kitchen with a lot of attitude.</h2>
         <p>
-          Crudelia was born out of the love for the street food vibe, inspired by the game changing Mexico 86 world cup 
-          and the epic food that kept it going, now in the uk bringing the best of the best for late nights and good people. 
-          From pub kitchen takeovers to private parties, the food is colourful, punchy and passionately made for sharing. 
+          Crudelia is built around bold salsas, slow braises, corn tortillas,
+          late nights and good people. From pub kitchen takeovers to private
+          parties, the food is colourful, punchy and made for sharing.
         </p>
       </div>
     </section>
@@ -281,7 +296,7 @@ function HomePage() {
       <section className="popupSection">
         <div>
           <p className="eyebrow">Find us next</p>
-          <h2>Currently cooking in Clapham Common</h2>
+          <h2>Currently cooking in London</h2>
           <p>
             Kitchen takeovers, pub pop-ups, match-day food, private events and
             late-night taco situations.
@@ -312,14 +327,13 @@ function HomePage() {
 function MenuPage() {
   return (
     <Layout>
-      <section className="pageHero">
-        <p className="eyebrow">Menu</p>
-        <h1>Tacos, antojitos & plates for la cruda.</h1>
-        <p>
-  Corn, smoke, salsa and slow-cooked trouble — a short, sharp menu made
-  for messy hands, cold drinks and la cruda.
-</p>
-      </section>
+      <PageHero
+        eyebrow="Menu"
+        title="Tacos, antojitos & plates for la cruda."
+        text="Corn, smoke, salsa and slow-cooked trouble — a short, sharp menu made for messy hands, cold drinks and la cruda."
+        image="/menu-hero.jpg"
+        imageAlt="Quesabirria taco with consommé"
+      />
 
       <section className="menuSection pageSection">
         <MenuGrid />
@@ -331,14 +345,13 @@ function MenuPage() {
 function PopUpsPage() {
   return (
     <Layout>
-      <section className="pageHero">
-        <p className="eyebrow">Pop-ups</p>
-        <h1>Find Crudelia in London.</h1>
-        <p>
-          Pub kitchen takeovers, match-day food, late-night service and special
-          events across the city.
-        </p>
-      </section>
+      <PageHero
+        eyebrow="Pop-ups"
+        title="Find Crudelia in London."
+        text="Pub kitchen takeovers, match-day food, late-night service and special events across the city."
+        image="/popups-hero.jpg"
+        imageAlt="Crudelia vegan doggo at a London pop-up"
+      />
 
       <section className="popupSection standalone">
         <div>
@@ -363,14 +376,13 @@ function PopUpsPage() {
 function CateringPage() {
   return (
     <Layout>
-      <section className="pageHero">
-        <p className="eyebrow">Catering</p>
-        <h1>Bring Crudelia to your party.</h1>
-        <p>
-          Private events, birthdays, supper clubs, brand events, weddings,
-          kitchen takeovers and anything that needs tacos, salsa and attitude.
-        </p>
-      </section>
+      <PageHero
+        eyebrow="Catering"
+        title="Bring Crudelia to your party."
+        text="Private events, birthdays, supper clubs, brand events, weddings, kitchen takeovers and anything that needs tacos, salsa and attitude."
+        image="/catering-hero.jpg"
+        imageAlt="Crudelia salsa trio and totopos"
+      />
 
       <section className="cateringSection pageSection">
         <div className="featureGrid">
@@ -385,7 +397,7 @@ function CateringPage() {
           table, a late-night cruda menu or a custom package around your event.
         </p>
 
-        <a className="cta" href="mailto:hola@crudelia.co.uk">
+        <a className="cta" href="mailto:hello@crudelia.mx">
           Enquire now
         </a>
       </section>
@@ -396,14 +408,13 @@ function CateringPage() {
 function GalleryPage() {
   return (
     <Layout>
-      <section className="pageHero">
-        <p className="eyebrow">Gallery</p>
-        <h1>From the kitchen pass.</h1>
-        <p>
-          Tuna tostadas, guacamole, salsa trio, birria, doggos and whatever
-          else makes it out before getting eaten.
-        </p>
-      </section>
+      <PageHero
+        eyebrow="Gallery"
+        title="From the kitchen pass."
+        text="Tuna tostadas, guacamole, salsa trio, birria, doggos and whatever else makes it out before getting eaten."
+        image="/gallery-hero.jpg"
+        imageAlt="Crudelia tuna tostada"
+      />
 
       <section className="gallerySection pageSection">
         <GalleryGrid />
@@ -415,19 +426,19 @@ function GalleryPage() {
 function ContactPage() {
   return (
     <Layout>
-      <section className="pageHero">
-        <p className="eyebrow">Contact</p>
-        <h1>Bookings, catering & collaborations.</h1>
-        <p>
-          For private catering, pop-ups, supper clubs, kitchen takeovers or
-          general Crudelia questions, get in touch.
-        </p>
-      </section>
+      <PageHero
+        eyebrow="Contact"
+        title="Bookings, catering & collaborations."
+        text="For private catering, pop-ups, supper clubs, kitchen takeovers or general Crudelia questions, get in touch."
+        image="/contact-hero.png"
+        imageAlt="Crudelia logo"
+        logo
+      />
 
       <section className="contactSection">
         <div className="contactCard">
           <p>Bookings & catering</p>
-          <a href="mailto:hola@crudelia.co.uk">hola@crudelia.co.uk</a>
+          <a href="mailto:hello@crudelia.mx">hello@crudelia.mx</a>
         </div>
 
         <div className="contactCard">
@@ -448,25 +459,11 @@ function ContactPage() {
 function App() {
   const path = window.location.pathname;
 
-  if (path === '/menu') {
-    return <MenuPage />;
-  }
-
-  if (path === '/pop-ups') {
-    return <PopUpsPage />;
-  }
-
-  if (path === '/catering') {
-    return <CateringPage />;
-  }
-
-  if (path === '/gallery') {
-    return <GalleryPage />;
-  }
-
-  if (path === '/contact') {
-    return <ContactPage />;
-  }
+  if (path === '/menu') return <MenuPage />;
+  if (path === '/pop-ups') return <PopUpsPage />;
+  if (path === '/catering') return <CateringPage />;
+  if (path === '/gallery') return <GalleryPage />;
+  if (path === '/contact') return <ContactPage />;
 
   return <HomePage />;
 }
