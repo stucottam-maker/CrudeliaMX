@@ -700,4 +700,33 @@ a {
   .contactCard a {
     font-size: 1.15rem;
   }
+  .allergenNotice {
+  max-width: 980px;
+  margin: 34px 0 0;
+  padding: 18px 20px;
+  background: rgba(245, 166, 189, 0.45);
+  border: 2px solid rgba(184, 32, 34, 0.35);
+  color: var(--dark-red);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.allergenNotice strong {
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.allergens {
+  margin-top: 8px !important;
+  color: var(--dark-red);
+  font-size: 0.76rem !important;
+  line-height: 1.35 !important;
+}
+
+.allergens strong {
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
 }
