@@ -8,21 +8,25 @@ const menuGroups = [
         name: 'Guacamole & Totopos',
         desc: 'Smashed avocado, lime, jalapeño, coriander and crisp totopos.',
         price: '£6.50',
+        allergens: 'Please ask',
       },
       {
         name: 'Esquites',
         desc: 'Charred sweetcorn, chipotle mayo, parmesan, lime and salsa macha.',
         price: '£6',
+        allergens: 'Eggs, Milk',
       },
       {
         name: 'Tacos Dorados de Papa',
         desc: 'Crispy rolled potato tacos, salsa verde, lettuce, sour cream and feta.',
         price: '£8',
+        allergens: 'Milk',
       },
       {
         name: 'Tuna Cevichelada Tostada',
         desc: 'Yellowfin tuna, michelada dressing, avocado, cucumber and red onion.',
         price: '£13',
+        allergens: 'Fish, Gluten, Soya',
       },
     ],
   },
@@ -33,16 +37,19 @@ const menuGroups = [
         name: 'Quesabirria',
         desc: 'Guajillo and ancho braised beef, cheese crust and consommé.',
         price: '£12',
+        allergens: 'Milk',
       },
       {
         name: 'Cochinita Pibil',
         desc: 'Achiote and citrus pulled pork, pickled onion and habanero salsa.',
         price: '£9',
+        allergens: 'Please ask',
       },
       {
         name: 'Hongos Adobados',
         desc: 'Oyster mushrooms in pasilla adobo, crispy leeks and salsa macha.',
         price: '£9',
+        allergens: 'Please ask',
       },
     ],
   },
@@ -53,16 +60,19 @@ const menuGroups = [
         name: 'Doggo Norteño',
         desc: 'Bacon-wrapped beef frankfurter, refried beans, jalapeño relish, chipotle mayo, pico de gallo and pickled onions.',
         price: '£12',
+        allergens: 'Gluten, Eggs, Milk, Mustard, Soya, Sulphites',
       },
       {
         name: 'Doggo Vegano',
         desc: 'Plant-based frankfurter, refried beans, jalapeño relish, vegan chipotle mayo, pico de gallo and pickled onions.',
         price: '£12',
+        allergens: 'Gluten, Mustard, Soya, Sulphites',
       },
       {
         name: 'Birria Loaded Fries',
         desc: 'Fries with beef birria, consommé, cheese, salsa verde, sour cream, guacamole and pickled onion.',
         price: '£12',
+        allergens: 'Milk',
       },
     ],
   },
@@ -73,16 +83,19 @@ const menuGroups = [
         name: 'Extra Totopos',
         desc: 'Crisp tortilla chips for dipping, scooping and sharing.',
         price: '£3',
+        allergens: 'Please ask',
       },
       {
         name: 'Fries',
         desc: 'Crispy seasoned fries.',
         price: '£4.50',
+        allergens: 'Please ask',
       },
       {
         name: 'Salsa Trio',
         desc: 'Salsa verde, habanero and macha.',
         price: '£4',
+        allergens: 'Please ask',
       },
     ],
   },
@@ -145,7 +158,7 @@ function Footer() {
 
       <div>
         <p>Bookings & catering</p>
-        <a href="mailto:hello@crudelia.mx">hello@crudelia.mx</a>
+        <a href="mailto:hello@crudelia.co.uk">hello@crudelia.co.uk</a>
         <br />
         <a
           href="https://www.instagram.com/crudelia.mx/"
@@ -237,27 +250,46 @@ function AboutBlock() {
   );
 }
 
+function AllergenNotice() {
+  return (
+    <div className="allergenNotice">
+      <strong>Allergen notice:</strong> Please speak to the team before ordering
+      if you have an allergy or intolerance. Our kitchen handles gluten, eggs,
+      fish, milk, mustard, soya, sulphites and other regulated allergens, so
+      cross-contamination may occur. Recipes and supplier ingredients may change.
+    </div>
+  );
+}
+
 function MenuGrid({ preview = false }) {
   const groups = preview ? menuGroups.slice(0, 2) : menuGroups;
 
   return (
-    <div className="menuGrid">
-      {groups.map((group) => (
-        <article className="menuCard" key={group.title}>
-          <h3>{group.title}</h3>
+    <>
+      <AllergenNotice />
 
-          {group.items.map((item) => (
-            <div className="menuItem" key={item.name}>
-              <div>
-                <h4>{item.name}</h4>
-                <p>{item.desc}</p>
+      <div className="menuGrid">
+        {groups.map((group) => (
+          <article className="menuCard" key={group.title}>
+            <h3>{group.title}</h3>
+
+            {group.items.map((item) => (
+              <div className="menuItem" key={item.name}>
+                <div>
+                  <h4>{item.name}</h4>
+                  <p>{item.desc}</p>
+                  <p className="allergens">
+                    <strong>Allergens:</strong> {item.allergens}
+                  </p>
+                </div>
+
+                <span>{item.price}</span>
               </div>
-              <span>{item.price}</span>
-            </div>
-          ))}
-        </article>
-      ))}
-    </div>
+            ))}
+          </article>
+        ))}
+      </div>
+    </>
   );
 }
 
@@ -397,7 +429,7 @@ function CateringPage() {
           table, a late-night cruda menu or a custom package around your event.
         </p>
 
-        <a className="cta" href="mailto:hello@crudelia.mx">
+        <a className="cta" href="mailto:hello@crudelia.co.uk">
           Enquire now
         </a>
       </section>
@@ -438,7 +470,7 @@ function ContactPage() {
       <section className="contactSection">
         <div className="contactCard">
           <p>Bookings & catering</p>
-          <a href="mailto:hello@crudelia.mx">hello@crudelia.mx</a>
+          <a href="mailto:hello@crudelia.co.uk">hello@crudelia.co.uk</a>
         </div>
 
         <div className="contactCard">
