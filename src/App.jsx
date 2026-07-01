@@ -439,7 +439,7 @@ function CateringPage() {
           table, a late-night cruda menu or a custom package around your event.
         </p>
 
-        <a className="cta" href="mailto:hello@crudelia.co.uk">
+        <a className="cta" href="/contact">
           Enquire now
         </a>
       </section>
@@ -477,22 +477,106 @@ function ContactPage() {
         logo
       />
 
-      <section className="contactSection">
-        <div className="contactCard">
-          <p>Bookings & catering</p>
-          <a href="mailto:hello@crudelia.co.uk">hello@crudelia.co.uk</a>
+      <section className="contactSection contactWithForm">
+        <div className="contactIntro">
+          <p className="eyebrow">Enquiries</p>
+          <h2>Tell us what you’re planning.</h2>
+
+          <p>
+            Send us a few details about your event, pop-up, catering enquiry or
+            collaboration and we’ll get back to you.
+          </p>
+
+          <div className="contactCardsStack">
+            <div className="contactCard">
+              <p>Bookings & catering</p>
+              <a href="mailto:hello@crudelia.co.uk">hello@crudelia.co.uk</a>
+            </div>
+
+            <div className="contactCard">
+              <p>Instagram</p>
+              <a
+                href="https://www.instagram.com/crudelia.mx/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                @crudelia.mx
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div className="contactCard">
-          <p>Instagram</p>
-          <a
-            href="https://www.instagram.com/crudelia.mx/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            @crudelia.mx
-          </a>
-        </div>
+        <form
+          className="contactForm"
+          action="https://formspree.io/f/mvzjwqeg"
+          method="POST"
+        >
+          <input
+            type="hidden"
+            name="_subject"
+            value="New Crudelia website enquiry"
+          />
+
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" required />
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" placeholder="Your email" required />
+          </label>
+
+          <label>
+            Phone
+            <input type="tel" name="phone" placeholder="Optional" />
+          </label>
+
+          <label>
+            Enquiry type
+            <select name="enquiry_type" defaultValue="Catering">
+              <option value="Catering">Catering</option>
+              <option value="Private event">Private event</option>
+              <option value="Pop-up">Pop-up</option>
+              <option value="Collaboration">Collaboration</option>
+              <option value="General enquiry">General enquiry</option>
+            </select>
+          </label>
+
+          <label>
+            Date / location
+            <input
+              type="text"
+              name="date_location"
+              placeholder="When and where?"
+            />
+          </label>
+
+          <label>
+            Number of guests
+            <input
+              type="text"
+              name="guest_count"
+              placeholder="Rough number, if known"
+            />
+          </label>
+
+          <label>
+            Message
+            <textarea
+              name="message"
+              rows="6"
+              placeholder="Tell us what you need..."
+              required
+            />
+          </label>
+
+          <button type="submit">Send enquiry</button>
+
+          <p className="formSmallPrint">
+            By sending this form, you agree to be contacted about your enquiry.
+          </p>
+        </form>
       </section>
     </Layout>
   );
