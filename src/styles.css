@@ -236,6 +236,13 @@ a {
   border-bottom: 3px solid var(--red);
 }
 
+.imagePageHero {
+  display: grid;
+  grid-template-columns: 1fr 0.72fr;
+  gap: 48px;
+  align-items: center;
+}
+
 .pageHero h1 {
   max-width: 980px;
   color: var(--red);
@@ -248,6 +255,34 @@ a {
   margin: 24px 0 0;
   font-size: 1.18rem;
   line-height: 1.65;
+}
+
+.pageHeroImage {
+  border: 3px solid var(--red);
+  background: var(--pink);
+  padding: 14px;
+  box-shadow: 12px 12px 0 rgba(184, 32, 34, 0.16);
+  border-radius: 28px;
+}
+
+.pageHeroImage img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.logoHeroImage {
+  display: grid;
+  place-items: center;
+  background: var(--cream);
+}
+
+.logoHeroImage img {
+  width: 82%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
 }
 
 .intro {
@@ -545,11 +580,13 @@ a {
 
 @media (max-width: 1050px) {
   .hero,
+  .imagePageHero,
   .popupSection {
     grid-template-columns: 1fr;
   }
 
-  .heroImage {
+  .heroImage,
+  .pageHeroImage {
     max-width: 620px;
   }
 
@@ -612,7 +649,8 @@ a {
     margin-top: 24px;
   }
 
-  .heroImage {
+  .heroImage,
+  .pageHeroImage {
     padding: 12px;
     box-shadow: 10px 10px 0 rgba(184, 32, 34, 0.16);
   }
