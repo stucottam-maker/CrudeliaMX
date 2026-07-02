@@ -213,10 +213,7 @@ function Hero() {
       <div className="heroImage">
         <img src="/crudelia-hero.jpg" alt="Crudelia tuna tostada" />
 
-        <div className="openBadge">
-          <strong>Open till late</strong>
-          <span>Service subject to match days</span>
-        </div>
+    
       </div>
     </section>
   );
